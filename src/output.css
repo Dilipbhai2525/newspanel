@@ -794,9 +794,6 @@
   .min-h-screen {
     min-height: 100vh;
   }
-  .w-1 {
-    width: calc(var(--spacing) * 1);
-  }
   .w-1\/2 {
     width: calc(1/2 * 100%);
   }
@@ -1645,17 +1642,9 @@
   .align-top {
     vertical-align: top;
   }
-  .text-3xl {
-    font-size: var(--text-3xl);
-    line-height: var(--tw-leading, var(--text-3xl--line-height));
-  }
   .leading-none {
     --tw-leading: 1;
     line-height: 1;
-  }
-  .font-bold {
-    --tw-font-weight: var(--font-weight-bold);
-    font-weight: var(--font-weight-bold);
   }
   .text-balance {
     text-wrap: balance;
@@ -2298,10 +2287,6 @@
   initial-value: 0;
 }
 @property --tw-leading {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-font-weight {
   syntax: "*";
   inherits: false;
 }
