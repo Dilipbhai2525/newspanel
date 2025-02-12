@@ -64,59 +64,28 @@
   height: 100vh;          /* Full viewport height for demonstration */
 }
 
-
-@media (max-width: 992px) {
+@media (max-width: 1400px) {
     .content {
-        width: 60%;
-        height: 60%;
+        width: 350px;
+        height: 450px;
     }
 
     #display{
-        width: 500px;
-        height: 70px;
-        font-size: 45px;
-        border-radius: 5px;
-        background-color: #ffffff;
-        color: #000000;
-        box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
-        border: none;
-        margin-left: 15px;
-    }
-
-
-        .button{
-            width: 100px;
-            height: 100px;
-            margin: 10px;
-        }
-
-    .btn{
-        padding: 15px 0px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .content {
-        width: 500px;
-        height: 500px;
-    }
-
-    #display{
-        width: 450px;
-        height: 50px;
+        width: 296px;
+        height: 45px;
         font-size: 35px;
         border-radius: 5px;
         background-color: #ffffff;
         color: #000000;
         box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
         border: none;
-        margin-left: 15px;
+        margin-left: 14px;
     }
 
 
         .button{
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             margin: 10px;
         }
 
@@ -125,10 +94,28 @@
     }
   }
 
-  @media (450px >= width) {
+  @media (max-width: 344px) {
     .content {
-        width: auto;
-        padding: auto;
-        margin: auto;
+        width: 328px;
+        height: 430px;
     }
+
+    #display{
+        width: 293px;
+        height: 45px;
+        font-size: 33px;
+        border-radius: 5px;
+        background-color: #ffffff;
+        color: #000000;
+        box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
+        border: none;
+        margin-left: 5px;
+    }
+
+
+        .button{
+            width: 58px;
+            height: 58px;
+            margin: 8px;
+        }
   }
