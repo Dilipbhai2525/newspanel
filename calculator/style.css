@@ -59,9 +59,9 @@
 }
 .main{
     display: flex;
-  justify-content: center; /* Centers items horizontally */
-  align-items: center;    /* Centers items vertically */
-  height: 100vh;          /* Full viewport height for demonstration */
+    justify-content: center; /* Centers items horizontally */
+    align-items: center;    /* Centers items vertically */
+    height: 100vh;          /* Full viewport height for demonstration */
 }
 
 @media (max-width: 1400px) {
