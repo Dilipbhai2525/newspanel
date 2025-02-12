@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .content {
     width: 25vw;
     margin: 20px 0px;
@@ -18,6 +24,7 @@
     color: #000000;
     box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
     border: none;
+    margin-left: 15px;
 }
 
 #display::placeholder{
@@ -52,7 +59,76 @@
 }
 .main{
     display: flex;
-    justify-content: center;
-    text-align: center;
+  justify-content: center; /* Centers items horizontally */
+  align-items: center;    /* Centers items vertically */
+  height: 100vh;          /* Full viewport height for demonstration */
 }
 
+
+@media (max-width: 992px) {
+    .content {
+        width: 60%;
+        height: 60%;
+    }
+
+    #display{
+        width: 500px;
+        height: 70px;
+        font-size: 45px;
+        border-radius: 5px;
+        background-color: #ffffff;
+        color: #000000;
+        box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
+        border: none;
+        margin-left: 15px;
+    }
+
+
+        .button{
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+
+    .btn{
+        padding: 15px 0px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content {
+        width: 500px;
+        height: 500px;
+    }
+
+    #display{
+        width: 450px;
+        height: 50px;
+        font-size: 35px;
+        border-radius: 5px;
+        background-color: #ffffff;
+        color: #000000;
+        box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
+        border: none;
+        margin-left: 15px;
+    }
+
+
+        .button{
+            width: 80px;
+            height: 80px;
+            margin: 10px;
+        }
+
+    .btn{
+        padding: 15px 0px;
+    }
+  }
+
+  @media (450px >= width) {
+    .content {
+        width: auto;
+        padding: auto;
+        margin: auto;
+    }
+  }
