@@ -23,8 +23,9 @@ a {
     display: flex;
     /* align-items: center; */
     /* height: 100%; */
-    gap: 50px;
+    gap: 43px;
     list-style: none;
+    padding-right: 30px;
 }
 
 .img-responsive{
@@ -40,4 +41,13 @@ a {
 
 .list:hover{
     color: #ff8400;
+}
+
+.fa-solid{
+  margin-right: 8px;
+}
+
+.epepar{
+  border-left: 1px solid #eaeaea;
+  padding-left: 40px;
 }
