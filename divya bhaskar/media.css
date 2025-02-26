@@ -1,0 +1,37 @@
+@media only screen and (min-width: 200px) and (max-width: 640px) {
+  .menu{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: aliceblue;
+    padding: 8px 0;
+  }
+
+  .container {
+    flex-direction: column; /* Stack the divs vertically */
+}
+
+.left, .right {
+    width: 100%; /* Make both divs take full width */
+}
+
+.left {
+    order: 2; /* Move left div below the right div */
+    margin-top: 10px; /* Add some space between the divs */
+    height: 10%;
+}
+
+.list{
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  overflow: hidden;
+  flex-direction: row;
+  
+}
+
+.right {
+    order: 1; /* Move right div to the top */
+}
+  
+}

@@ -26,6 +26,7 @@ a {
   gap: 43px;
   list-style: none;
   padding-right: 30px;
+  margin-left: 30px;
 }
 
 .navbar li a:active, 
