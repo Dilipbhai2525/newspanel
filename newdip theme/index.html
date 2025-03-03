@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ee04cbdf56.js"></script>
-    link
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--google font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+    
     <style>
         /* Body padding for fixed header */
         body {
@@ -73,7 +77,46 @@
         .category-item:hover {
             background: #e9ecef;
         }
-        
+
+        /* News Article Styles */
+        .news-article {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .news-article img {
+            max-width: 150px;
+            height: auto;
+            margin-right: 15px;
+            border-radius: 5px;
+        }
+
+        .news-article .content {
+            flex: 1;
+        }
+
+        .news-article h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .news-article p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .news-article .time {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
         @media (max-width: 578px) {
             /* Mobile Sidebar */
             .sidebar {
@@ -130,6 +173,58 @@
                 display: flex !important;
                 margin-left: auto;
                 margin-right: 15px;
+            }
+
+            /* Adjust news article layout on mobile (below 578px) */
+            .news-article {
+                flex-direction: row; /* Keep horizontal layout */
+                align-items: flex-start; /* Align items at the top */
+            }
+
+            .news-article img {
+                max-width: 100px; /* Reduce image size for smaller screens */
+                margin-right: 10px; /* Reduce margin for compactness */
+            }
+
+            .news-article .content {
+                flex: 1;
+            }
+
+            .news-article h3 {
+                font-size: 1rem; /* Smaller headline for mobile */
+            }
+
+            .news-article p {
+                font-size: 0.8rem; /* Smaller text for mobile */
+            }
+        }
+
+        /* Specific adjustment for screens between 200px and 578px */
+        @media (min-width: 200px) and (max-width: 578px) {
+            .news-article {
+                flex-direction: row; /* Ensure horizontal layout */
+                padding: 10px; /* Reduce padding for smaller screens */
+            }
+
+            .news-article img {
+                max-width: 100px; /* Consistent image size for this range */
+                margin-right: 10px;
+            }
+
+            .news-article .content {
+                flex: 1;
+            }
+
+            .news-article h3 {
+                font-size: 1rem; /* Consistent smaller headline */
+            }
+
+            .news-article p {
+                font-size: 0.8rem; /* Consistent smaller text */
+            }
+
+            .news-article .time {
+                font-size: 0.7rem; /* Smaller time text */
             }
         }
 
@@ -228,18 +323,23 @@
 
 <!-- Main Content -->
 <div class="main-content">
-    <!-- <h1>Welcome to Divya Bhaskar</h1>
-    <p>This is the main content area. You can add articles, news, and other content here.</p> -->
-
-    . <div class="container">
-        <li>
-            <a href="#">
-                <div class="" title=""><img src="https://www.divyabhaskar.co.in/sites/default/files/2023-10/1000024720.jpg" alt=""></div>
-            </a>
-        </li>
+    <div class="news-article">
+        <img src="../img/post/Apple Apps Banned.png" alt="News Image 1" class="img-fluid">
+        <div class="content">
+            <h3>રાહુલ ગાંધીનો મોટો દાવો: 'અમારી સરકાર ને આજી હકીમી દ્વારા, શુ પુતીન સાથે મીટીંગ કે'</h3>
+            <p>રાહુલ ગાંધીએ નવી રાજકીય ઘટના ઉઠાવતા મોટો દાવો કર્યો છે. તેમણે કહ્યું કે અમારી સરકાર ને...</p>
+            <span class="time">0:52</span>
+        </div>
     </div>
 
-
+    <div class="news-article">
+        <img src="../img/post/Apple Apps Banned.png" alt="News Image 2" class="img-fluid">
+        <div class="content">
+            <h3>ઓસ્ટ્રેલિયા સામે સામાન્યધીષ્ઠ ભારતનો એક રોમાંચક ગોલ્ડ: ફાઇનલ માં પ્રવેશ પર કગારારૂઢ રમતભાર નઈ</h3>
+            <p>ભારત અને ઓસ્ટ્રેલિયા વચ્ચે રમાયેલી સામાન્યધીષ્ઠ મેચમાં ભારતે એક રોમાંચક ગોલ્ડ જીતી...</p>
+            <span class="time">1:29</span>
+        </div>
+    </div>
 </div>
 
 <!-- Bottom Fixed Navigation -->
