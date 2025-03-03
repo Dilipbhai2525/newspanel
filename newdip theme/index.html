@@ -7,6 +7,11 @@
     <script src="https://kit.fontawesome.com/ee04cbdf56.js"></script>
     
     <style>
+        /* Body padding for fixed header */
+        body {
+            padding-top: 56px;
+        }
+
         /* Custom Bottom Navigation */
         .bottom-nav {
             display: none;
@@ -33,33 +38,66 @@
             font-size: 0.9rem;
         }
         
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            background: #f8f9fa;
+            height: calc(100vh - 56px);
+            position: fixed;
+            top: 56px;
+            left: 0;
+            overflow-y: auto;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            padding: 15px;
+            z-index: 999;
+        }
+        
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        
+        .category-item {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .category-item:hover {
+            background: #e9ecef;
+        }
+        
         @media (max-width: 578px) {
+            /* Mobile Sidebar */
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: sticky;
+                top: 56px;
+                z-index: 1000;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            
+            .main-content {
+                margin-left: 0;
+                z-index: 1;
+            }
+            
+            /* Bottom Nav */
             .bottom-nav {
                 display: block;
             }
             
-            /* Hide main nav items on mobile */
-            .main-nav-items {
-                display: none !important;
-            }
-            
-            /* Add padding to body */
             body {
                 padding-bottom: 70px;
-            }
-            
-            /* Always visible items */
-            .mobile-visible-items {
-                display: flex !important;
-                margin-left: auto;
-                margin-right: 15px;
             }
         }
     </style>
 </head>
 <body>
 
-<header class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2">
+<header class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2 fixed-top">
     <div class="container">
         <a class="navbar-brand" href="/">
             <img src="/img/logo/divyabnhaskar.png" alt="Divya Bhaskar" class="img-fluid">
@@ -81,9 +119,9 @@
             </ul>
         </div>
 
-        <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
-        </button> -->
+        </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto align-items-lg-center">
@@ -124,6 +162,42 @@
         </div>
     </div>
 </header>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h5 class="mb-3">Categories</h5>
+    <div class="category-item">
+        <i class="fas fa-newspaper me-2"></i>
+        <span>Latest News</span>
+    </div>
+    <div class="category-item">
+        <i class="fas fa-video me-2"></i>
+        <span>Videos</span>
+    </div>
+    <div class="category-item">
+        <i class="fas fa-city me-2"></i>
+        <span>Local News</span>
+    </div>
+    <div class="category-item">
+        <i class="fas fa-globe me-2"></i>
+        <span>International</span>
+    </div>
+    <div class="category-item">
+        <i class="fas fa-rupee-sign me-2"></i>
+        <span>Business</span>
+    </div>
+    <div class="category-item">
+        <i class="fas fa-basketball-ball me-2"></i>
+        <span>Sports</span>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <h1>Welcome to Divya Bhaskar</h1>
+    <p>This is the main content area. You can add articles, news, and other content here.</p>
+    <!-- Add more content here -->
+</div>
 
 <!-- Bottom Fixed Navigation -->
 <div class="bottom-nav">
