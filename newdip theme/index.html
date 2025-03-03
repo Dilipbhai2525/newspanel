@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ee04cbdf56.js"></script>
-    
+    link
     <style>
         /* Body padding for fixed header */
         body {
@@ -57,11 +57,17 @@
             padding: 20px;
         }
         
+        .category-container {
+            display: flex;
+            flex-direction: column;
+        }
+        
         .category-item {
             padding: 10px;
             margin: 5px 0;
             border-radius: 5px;
             transition: background 0.3s;
+            white-space: nowrap;
         }
         
         .category-item:hover {
@@ -77,6 +83,27 @@
                 top: 56px;
                 z-index: 1000;
                 box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                overflow-x: auto;
+                overflow-y: hidden;
+                display: flex;
+                flex-direction: row;
+                padding: 10px;
+                white-space: nowrap;
+            }
+            
+            .category-container {
+                display: flex;
+                flex-direction: row;
+                overflow-x: auto;
+                gap: 10px;
+            }
+
+            .category-item {
+                display: inline-block;
+                padding: 10px 15px;
+                border-radius: 5px;
+                background: #f8f9fa;
+                flex-shrink: 0;
             }
             
             .main-content {
@@ -91,6 +118,25 @@
             
             body {
                 padding-bottom: 70px;
+            }
+            
+            /* Hide main nav items on mobile */
+            .main-nav-items {
+                display: none !important;
+            }
+            
+            /* Always visible items */
+            .mobile-visible-items {
+                display: flex !important;
+                margin-left: auto;
+                margin-right: 15px;
+            }
+        }
+
+        /* Hide Navbar Toggler between 200px and 578px */
+        @media (min-width: 200px) and (max-width: 578px) {
+            .navbar-toggler {
+                display: none !important;
             }
         }
     </style>
@@ -119,7 +165,8 @@
             </ul>
         </div>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <!-- Navbar Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -164,39 +211,35 @@
 </header>
 
 <!-- Sidebar -->
-<div class="sidebar">
-    <h5 class="mb-3">Categories</h5>
-    <div class="category-item">
-        <i class="fas fa-newspaper me-2"></i>
-        <span>Latest News</span>
-    </div>
-    <div class="category-item">
-        <i class="fas fa-video me-2"></i>
-        <span>Videos</span>
-    </div>
-    <div class="category-item">
-        <i class="fas fa-city me-2"></i>
-        <span>Local News</span>
-    </div>
-    <div class="category-item">
-        <i class="fas fa-globe me-2"></i>
-        <span>International</span>
-    </div>
-    <div class="category-item">
-        <i class="fas fa-rupee-sign me-2"></i>
-        <span>Business</span>
-    </div>
-    <div class="category-item">
-        <i class="fas fa-basketball-ball me-2"></i>
-        <span>Sports</span>
+<div class="sidebar mt-2">
+    <div class="category-container">
+        <div class="category-item"><i class="fas fa-newspaper me-2"></i> Latest News</div>
+        <div class="category-item"><i class="fas fa-video me-2"></i> Videos</div>
+        <div class="category-item"><i class="fas fa-city me-2"></i> Local News</div>
+        <div class="category-item"><i class="fas fa-globe me-2"></i> International</div>
+        <div class="category-item"><i class="fas fa-rupee-sign me-2"></i> Business</div>
+        <div class="category-item"><i class="fas fa-basketball-ball me-2"></i> Sports</div>
+        <div class="category-item"><i class="fas fa-heart me-2"></i> Health</div>
+        <div class="category-item"><i class="fas fa-car me-2"></i> Automobile</div>
+        <div class="category-item"><i class="fas fa-graduation-cap me-2"></i> Education</div>
+        <div class="category-item"><i class="fas fa-utensils me-2"></i> Food</div>
     </div>
 </div>
 
 <!-- Main Content -->
 <div class="main-content">
-    <h1>Welcome to Divya Bhaskar</h1>
-    <p>This is the main content area. You can add articles, news, and other content here.</p>
-    <!-- Add more content here -->
+    <!-- <h1>Welcome to Divya Bhaskar</h1>
+    <p>This is the main content area. You can add articles, news, and other content here.</p> -->
+
+    . <div class="container">
+        <li>
+            <a href="#">
+                <div class="" title=""><img src="https://www.divyabhaskar.co.in/sites/default/files/2023-10/1000024720.jpg" alt=""></div>
+            </a>
+        </li>
+    </div>
+
+
 </div>
 
 <!-- Bottom Fixed Navigation -->
