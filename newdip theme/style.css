@@ -1,0 +1,22 @@
+.min{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.min .card{
+  margin: auto;
+  margin-bottom: 8px;
+}
+
+@media (min-width: 200px) and (max-width: 578px) {
+
+.min .card{
+  width: 100wh;
+  width: 100;
+  margin: 0;
+  padding: 0;
+}
+
+}
