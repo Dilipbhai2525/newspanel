@@ -243,7 +243,7 @@
 
 <header class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2 fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="index.html">
             <img src="/img/logo/divyabnhaskar.png" alt="Divya Bhaskar" class="img-fluid">
         </a>
 
@@ -279,12 +279,12 @@
                 </li>
                 <li class="nav-item main-nav-items">
                     <a class="nav-link" href="#">
-                        <i class="fas fa-video"></i>
-                        <span>Video</span>
+                        <i class="fa-solid fa-users"></i>
+                        <span>Admin User</span>
                     </a>
                 </li>
                 <li class="nav-item main-nav-items">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="search.html">
                         <i class="fas fa-search"></i>
                         <span>Search</span>
                     </a>
@@ -311,16 +311,16 @@
 <!-- Sidebar -->
 <div class="sidebar mt-2">
     <div class="category-container">
-        <div class="category-item"><i class="fas fa-newspaper me-2"></i> Latest News</div>
-        <div class="category-item"><i class="fas fa-video me-2"></i> Videos</div>
-        <div class="category-item"><i class="fas fa-city me-2"></i> Local News</div>
-        <div class="category-item"><i class="fas fa-globe me-2"></i> International</div>
-        <div class="category-item"><i class="fas fa-rupee-sign me-2"></i> Business</div>
-        <div class="category-item"><i class="fas fa-basketball-ball me-2"></i> Sports</div>
-        <div class="category-item"><i class="fas fa-heart me-2"></i> Health</div>
-        <div class="category-item"><i class="fas fa-car me-2"></i> Automobile</div>
-        <div class="category-item"><i class="fas fa-graduation-cap me-2"></i> Education</div>
-        <div class="category-item"><i class="fas fa-utensils me-2"></i> Food</div>
+        <div class="category-item"><i class="fas fa-newspaper me-2"></i><a href="category.html"> Latest News</a></div>
+        <div class="category-item"><i class="fas fa-video me-2"></i><a href="category.html"></a> Videos</a></div>
+        <div class="category-item"><i class="fas fa-city me-2"></i><a href="category.html"></a> Local News</a></div>
+        <div class="category-item"><i class="fas fa-globe me-2"></i><a href="category.html"></a> International</a></div>
+        <div class="category-item"><i class="fas fa-rupee-sign me-2"></i><a href="category.html"></a> Business</a></div>
+        <div class="category-item"><i class="fas fa-basketball-ball me-2"></i><a href="category.html"></a> Sports</a></div>
+        <div class="category-item"><i class="fas fa-heart me-2"></i><a href="category.html"></a> Health</a></div>
+        <div class="category-item"><i class="fas fa-car me-2"></i><a href="category.html"></a> Automobile</a></div>
+        <div class="category-item"><i class="fas fa-graduation-cap me-2"></i><a href="category.html"></a> Education</a></div>
+        <div class="category-item"><i class="fas fa-utensils me-2"></i><a href="category.html"></a> Food</a></div>
     </div>
 </div>
 
@@ -328,60 +328,336 @@
 <div class="main-content">
     <div class="mt-sm-3 mb-sm-1 min">
 
-    <div class="card" style="width: 21rem;">
-        <img src="../img/post/Apple Apps Banned.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h5>
-          <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, eaque architecto. Quibusdam dolor eius sed sequi reprehenderit dolorum repellendus dolores esse voluptates nihil. Atque molestias recusandae id placeat tenetur sequi, quaerat rem iusto eaque a provident odit doloremque dignissimos minus voluptatibus nostrum assumenda velit suscipit exercitationem temporibus reiciendis magni deserunt mollitia! Magnam unde nobis quia velit eius aut aperiam dolores!</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="card" style="width: 21rem;">
+            <div class="position-relative">
+                <img src="../img/post/Apple Apps Banned.png" class="card-img-top" alt="...">
+                <span class="position-absolute bottom-0 end-0 bg-dark text-white px-2 py-1 rounded m-2 small">
+                    કેટેગરી
+                </span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h5>
+                
+                <!-- Publisher details row -->
+               <!-- <div class="d-flex align-items-center justify-content-between mt-2 mb-3">
+                    <div class="d-flex align-items-center">
+                        
+                        <img src="../img/logo/divyabnhaskar.png" class="rounded-circle" style="width: 30px; height: 30px; object-fit: cover;" alt="Publisher Logo">
+                        
+                        
+                        <a href="">
+                        <span class="ms-2 small text-muted">Aaj tak</span></a>
+                    </div>
+                    
+                    
+                    <div class="btn-group" id="subscribeContainer">
+                        <button id="subscribeBtn" class="btn btn-outline-primary btn-sm py-0 px-2" style="font-size: 0.7rem;">
+                            Subscribe
+                        </button>
+                        <div id="bellOptions" class="dropdown-menu dropdown-menu-end p-2" style="min-width: 180px; display: none;">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="small">Notification settings:</span>
+                                <button id="unsubscribeBtn" class="btn btn-link p-0 text-danger" style="font-size: 0.6rem;">Unsubscribe</button>
+                            </div>
+                            <button class="btn btn-sm w-100 mb-1 d-flex align-items-center justify-content-between all-notifications">
+                                <span>All</span>
+                                <i class="fa-solid fa-bell text-dark"></i>
+                            </button>
+                            <button class="btn btn-sm w-100 mb-1 d-flex align-items-center justify-content-between personalized-notifications">
+                                <span>Personalized</span>
+                                <i class="fa-solid fa-bell text-dark"></i>
+                            </button>
+                            <button class="btn btn-sm w-100 d-flex align-items-center justify-content-between no-notifications">
+                                <span>None</span>
+                                <i class="fa-solid fa-bell-slash text-dark"></i>
+                            </button>
+                        </div>
+                        <button id="bellIcon" class="btn btn-link p-0 ms-1" style="display: none;" data-bs-toggle="dropdown">
+                            <i class="fa-solid fa-bell"></i>
+                        </button>
+                    </div>
+                </div> -->
+                
+                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum assumenda cupiditate nostrum corrupti quos ullam! Corporis recusandae optio voluptate repellat vitae modi natus omnis magni delectus. Laboriosam, error dolor pariatur ipsum, accusantium commodi ad sint voluptatem maxime porro necessitatibus veniam eveniet atque dicta vitae itaque iusto tempora velit. Rerum, aspernatur.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
         </div>
-      </div>
-    <div class="card" style="width: 21rem;">
-        <img src="../img/post/Apple Apps Banned.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h5>
-          <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, eaque architecto. Quibusdam dolor eius sed sequi reprehenderit dolorum repellendus dolores esse voluptates nihil. Atque molestias recusandae id placeat tenetur sequi, quaerat rem iusto eaque a provident odit doloremque dignissimos minus voluptatibus nostrum assumenda velit suscipit exercitationem temporibus reiciendis magni deserunt mollitia! Magnam unde nobis quia velit eius aut aperiam dolores!</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="card" style="width: 21rem;">
+            <div class="position-relative">
+                <img src="../img/post/Apple Apps Banned.png" class="card-img-top" alt="...">
+                <span class="position-absolute bottom-0 end-0 bg-dark text-white px-2 py-1 rounded m-2 small">
+                    કેટેગરી
+                </span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h5>
+                
+                <!-- Publisher details row -->
+               <!-- <div class="d-flex align-items-center justify-content-between mt-2 mb-3">
+                    <div class="d-flex align-items-center">
+                        
+                        <img src="../img/logo/divyabnhaskar.png" class="rounded-circle" style="width: 30px; height: 30px; object-fit: cover;" alt="Publisher Logo">
+                        
+                        
+                        <a href="">
+                        <span class="ms-2 small text-muted">Aaj tak</span></a>
+                    </div>
+                    
+                    
+                    <div class="btn-group" id="subscribeContainer">
+                        <button id="subscribeBtn" class="btn btn-outline-primary btn-sm py-0 px-2" style="font-size: 0.7rem;">
+                            Subscribe
+                        </button>
+                        <div id="bellOptions" class="dropdown-menu dropdown-menu-end p-2" style="min-width: 180px; display: none;">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="small">Notification settings:</span>
+                                <button id="unsubscribeBtn" class="btn btn-link p-0 text-danger" style="font-size: 0.6rem;">Unsubscribe</button>
+                            </div>
+                            <button class="btn btn-sm w-100 mb-1 d-flex align-items-center justify-content-between all-notifications">
+                                <span>All</span>
+                                <i class="fa-solid fa-bell text-dark"></i>
+                            </button>
+                            <button class="btn btn-sm w-100 mb-1 d-flex align-items-center justify-content-between personalized-notifications">
+                                <span>Personalized</span>
+                                <i class="fa-solid fa-bell text-dark"></i>
+                            </button>
+                            <button class="btn btn-sm w-100 d-flex align-items-center justify-content-between no-notifications">
+                                <span>None</span>
+                                <i class="fa-solid fa-bell-slash text-dark"></i>
+                            </button>
+                        </div>
+                        <button id="bellIcon" class="btn btn-link p-0 ms-1" style="display: none;" data-bs-toggle="dropdown">
+                            <i class="fa-solid fa-bell"></i>
+                        </button>
+                    </div>
+                </div> -->
+                
+                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum assumenda cupiditate nostrum corrupti quos ullam! Corporis recusandae optio voluptate repellat vitae modi natus omnis magni delectus. Laboriosam, error dolor pariatur ipsum, accusantium commodi ad sint voluptatem maxime porro necessitatibus veniam eveniet atque dicta vitae itaque iusto tempora velit. Rerum, aspernatur.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
         </div>
-      </div>
-    <div class="card" style="width: 21rem;">
-        <img src="../img/post/Apple Apps Banned.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h5>
-          <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, eaque architecto. Quibusdam dolor eius sed sequi reprehenderit dolorum repellendus dolores esse voluptates nihil. Atque molestias recusandae id placeat tenetur sequi, quaerat rem iusto eaque a provident odit doloremque dignissimos minus voluptatibus nostrum assumenda velit suscipit exercitationem temporibus reiciendis magni deserunt mollitia! Magnam unde nobis quia velit eius aut aperiam dolores!</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="card" style="width: 21rem;">
+            <div class="position-relative">
+                <img src="../img/post/Apple Apps Banned.png" class="card-img-top" alt="...">
+                <span class="position-absolute bottom-0 end-0 bg-dark text-white px-2 py-1 rounded m-2 small">
+                    કેટેગરી
+                </span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h5>
+                
+                <!-- Publisher details row -->
+               <!-- <div class="d-flex align-items-center justify-content-between mt-2 mb-3">
+                    <div class="d-flex align-items-center">
+                        
+                        <img src="../img/logo/divyabnhaskar.png" class="rounded-circle" style="width: 30px; height: 30px; object-fit: cover;" alt="Publisher Logo">
+                        
+                        
+                        <a href="">
+                        <span class="ms-2 small text-muted">Aaj tak</span></a>
+                    </div>
+                    
+                    
+                    <div class="btn-group" id="subscribeContainer">
+                        <button id="subscribeBtn" class="btn btn-outline-primary btn-sm py-0 px-2" style="font-size: 0.7rem;">
+                            Subscribe
+                        </button>
+                        <div id="bellOptions" class="dropdown-menu dropdown-menu-end p-2" style="min-width: 180px; display: none;">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="small">Notification settings:</span>
+                                <button id="unsubscribeBtn" class="btn btn-link p-0 text-danger" style="font-size: 0.6rem;">Unsubscribe</button>
+                            </div>
+                            <button class="btn btn-sm w-100 mb-1 d-flex align-items-center justify-content-between all-notifications">
+                                <span>All</span>
+                                <i class="fa-solid fa-bell text-dark"></i>
+                            </button>
+                            <button class="btn btn-sm w-100 mb-1 d-flex align-items-center justify-content-between personalized-notifications">
+                                <span>Personalized</span>
+                                <i class="fa-solid fa-bell text-dark"></i>
+                            </button>
+                            <button class="btn btn-sm w-100 d-flex align-items-center justify-content-between no-notifications">
+                                <span>None</span>
+                                <i class="fa-solid fa-bell-slash text-dark"></i>
+                            </button>
+                        </div>
+                        <button id="bellIcon" class="btn btn-link p-0 ms-1" style="display: none;" data-bs-toggle="dropdown">
+                            <i class="fa-solid fa-bell"></i>
+                        </button>
+                    </div>
+                </div> -->
+                
+                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum assumenda cupiditate nostrum corrupti quos ullam! Corporis recusandae optio voluptate repellat vitae modi natus omnis magni delectus. Laboriosam, error dolor pariatur ipsum, accusantium commodi ad sint voluptatem maxime porro necessitatibus veniam eveniet atque dicta vitae itaque iusto tempora velit. Rerum, aspernatur.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
         </div>
-      </div>
-    
-    <div class="card" style="width: 21rem;">
-        <img src="../img/post/Apple Apps Banned.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h5>
-          <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, eaque architecto. Quibusdam dolor eius sed sequi reprehenderit dolorum repellendus dolores esse voluptates nihil. Atque molestias recusandae id placeat tenetur sequi, quaerat rem iusto eaque a provident odit doloremque dignissimos minus voluptatibus nostrum assumenda velit suscipit exercitationem temporibus reiciendis magni deserunt mollitia! Magnam unde nobis quia velit eius aut aperiam dolores!</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="card" style="width: 21rem;">
+            <div class="position-relative">
+                <img src="../img/post/Apple Apps Banned.png" class="card-img-top" alt="...">
+                <span class="position-absolute bottom-0 end-0 bg-dark text-white px-2 py-1 rounded m-2 small">
+                    કેટેગરી
+                </span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h5>
+                
+                <!-- Publisher details row -->
+               <!-- <div class="d-flex align-items-center justify-content-between mt-2 mb-3">
+                    <div class="d-flex align-items-center">
+                        
+                        <img src="../img/logo/divyabnhaskar.png" class="rounded-circle" style="width: 30px; height: 30px; object-fit: cover;" alt="Publisher Logo">
+                        
+                        
+                        <a href="">
+                        <span class="ms-2 small text-muted">Aaj tak</span></a>
+                    </div>
+                    
+                    
+                    <div class="btn-group" id="subscribeContainer">
+                        <button id="subscribeBtn" class="btn btn-outline-primary btn-sm py-0 px-2" style="font-size: 0.7rem;">
+                            Subscribe
+                        </button>
+                        <div id="bellOptions" class="dropdown-menu dropdown-menu-end p-2" style="min-width: 180px; display: none;">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="small">Notification settings:</span>
+                                <button id="unsubscribeBtn" class="btn btn-link p-0 text-danger" style="font-size: 0.6rem;">Unsubscribe</button>
+                            </div>
+                            <button class="btn btn-sm w-100 mb-1 d-flex align-items-center justify-content-between all-notifications">
+                                <span>All</span>
+                                <i class="fa-solid fa-bell text-dark"></i>
+                            </button>
+                            <button class="btn btn-sm w-100 mb-1 d-flex align-items-center justify-content-between personalized-notifications">
+                                <span>Personalized</span>
+                                <i class="fa-solid fa-bell text-dark"></i>
+                            </button>
+                            <button class="btn btn-sm w-100 d-flex align-items-center justify-content-between no-notifications">
+                                <span>None</span>
+                                <i class="fa-solid fa-bell-slash text-dark"></i>
+                            </button>
+                        </div>
+                        <button id="bellIcon" class="btn btn-link p-0 ms-1" style="display: none;" data-bs-toggle="dropdown">
+                            <i class="fa-solid fa-bell"></i>
+                        </button>
+                    </div>
+                </div> -->
+                
+                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum assumenda cupiditate nostrum corrupti quos ullam! Corporis recusandae optio voluptate repellat vitae modi natus omnis magni delectus. Laboriosam, error dolor pariatur ipsum, accusantium commodi ad sint voluptatem maxime porro necessitatibus veniam eveniet atque dicta vitae itaque iusto tempora velit. Rerum, aspernatur.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
         </div>
-      </div>
-    <div class="card" style="width: 21rem;">
-        <img src="../img/post/Apple Apps Banned.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h5>
-          <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, eaque architecto. Quibusdam dolor eius sed sequi reprehenderit dolorum repellendus dolores esse voluptates nihil. Atque molestias recusandae id placeat tenetur sequi, quaerat rem iusto eaque a provident odit doloremque dignissimos minus voluptatibus nostrum assumenda velit suscipit exercitationem temporibus reiciendis magni deserunt mollitia! Magnam unde nobis quia velit eius aut aperiam dolores!</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="card" style="width: 21rem;">
+            <div class="position-relative">
+                <img src="../img/post/Apple Apps Banned.png" class="card-img-top" alt="...">
+                <span class="position-absolute bottom-0 end-0 bg-dark text-white px-2 py-1 rounded m-2 small">
+                    કેટેગરી
+                </span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h5>
+                
+                <!-- Publisher details row -->
+               <!-- <div class="d-flex align-items-center justify-content-between mt-2 mb-3">
+                    <div class="d-flex align-items-center">
+                        
+                        <img src="../img/logo/divyabnhaskar.png" class="rounded-circle" style="width: 30px; height: 30px; object-fit: cover;" alt="Publisher Logo">
+                        
+                        
+                        <a href="">
+                        <span class="ms-2 small text-muted">Aaj tak</span></a>
+                    </div>
+                    
+                    
+                    <div class="btn-group" id="subscribeContainer">
+                        <button id="subscribeBtn" class="btn btn-outline-primary btn-sm py-0 px-2" style="font-size: 0.7rem;">
+                            Subscribe
+                        </button>
+                        <div id="bellOptions" class="dropdown-menu dropdown-menu-end p-2" style="min-width: 180px; display: none;">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="small">Notification settings:</span>
+                                <button id="unsubscribeBtn" class="btn btn-link p-0 text-danger" style="font-size: 0.6rem;">Unsubscribe</button>
+                            </div>
+                            <button class="btn btn-sm w-100 mb-1 d-flex align-items-center justify-content-between all-notifications">
+                                <span>All</span>
+                                <i class="fa-solid fa-bell text-dark"></i>
+                            </button>
+                            <button class="btn btn-sm w-100 mb-1 d-flex align-items-center justify-content-between personalized-notifications">
+                                <span>Personalized</span>
+                                <i class="fa-solid fa-bell text-dark"></i>
+                            </button>
+                            <button class="btn btn-sm w-100 d-flex align-items-center justify-content-between no-notifications">
+                                <span>None</span>
+                                <i class="fa-solid fa-bell-slash text-dark"></i>
+                            </button>
+                        </div>
+                        <button id="bellIcon" class="btn btn-link p-0 ms-1" style="display: none;" data-bs-toggle="dropdown">
+                            <i class="fa-solid fa-bell"></i>
+                        </button>
+                    </div>
+                </div> -->
+                
+                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum assumenda cupiditate nostrum corrupti quos ullam! Corporis recusandae optio voluptate repellat vitae modi natus omnis magni delectus. Laboriosam, error dolor pariatur ipsum, accusantium commodi ad sint voluptatem maxime porro necessitatibus veniam eveniet atque dicta vitae itaque iusto tempora velit. Rerum, aspernatur.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
         </div>
-      </div>
-    <div class="card" style="width: 21rem;">
-        <img src="../img/post/Apple Apps Banned.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h5>
-          <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, eaque architecto. Quibusdam dolor eius sed sequi reprehenderit dolorum repellendus dolores esse voluptates nihil. Atque molestias recusandae id placeat tenetur sequi, quaerat rem iusto eaque a provident odit doloremque dignissimos minus voluptatibus nostrum assumenda velit suscipit exercitationem temporibus reiciendis magni deserunt mollitia! Magnam unde nobis quia velit eius aut aperiam dolores!</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="card" style="width: 21rem;">
+            <div class="position-relative">
+                <img src="../img/post/Apple Apps Banned.png" class="card-img-top" alt="...">
+                <span class="position-absolute bottom-0 end-0 bg-dark text-white px-2 py-1 rounded m-2 small">
+                    કેટેગરી
+                </span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h5>
+                
+                <!-- Publisher details row -->
+               <!-- <div class="d-flex align-items-center justify-content-between mt-2 mb-3">
+                    <div class="d-flex align-items-center">
+                        
+                        <img src="../img/logo/divyabnhaskar.png" class="rounded-circle" style="width: 30px; height: 30px; object-fit: cover;" alt="Publisher Logo">
+                        
+                        
+                        <a href="">
+                        <span class="ms-2 small text-muted">Aaj tak</span></a>
+                    </div>
+                    
+                    
+                    <div class="btn-group" id="subscribeContainer">
+                        <button id="subscribeBtn" class="btn btn-outline-primary btn-sm py-0 px-2" style="font-size: 0.7rem;">
+                            Subscribe
+                        </button>
+                        <div id="bellOptions" class="dropdown-menu dropdown-menu-end p-2" style="min-width: 180px; display: none;">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="small">Notification settings:</span>
+                                <button id="unsubscribeBtn" class="btn btn-link p-0 text-danger" style="font-size: 0.6rem;">Unsubscribe</button>
+                            </div>
+                            <button class="btn btn-sm w-100 mb-1 d-flex align-items-center justify-content-between all-notifications">
+                                <span>All</span>
+                                <i class="fa-solid fa-bell text-dark"></i>
+                            </button>
+                            <button class="btn btn-sm w-100 mb-1 d-flex align-items-center justify-content-between personalized-notifications">
+                                <span>Personalized</span>
+                                <i class="fa-solid fa-bell text-dark"></i>
+                            </button>
+                            <button class="btn btn-sm w-100 d-flex align-items-center justify-content-between no-notifications">
+                                <span>None</span>
+                                <i class="fa-solid fa-bell-slash text-dark"></i>
+                            </button>
+                        </div>
+                        <button id="bellIcon" class="btn btn-link p-0 ms-1" style="display: none;" data-bs-toggle="dropdown">
+                            <i class="fa-solid fa-bell"></i>
+                        </button>
+                    </div>
+                </div> -->
+                
+                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum assumenda cupiditate nostrum corrupti quos ullam! Corporis recusandae optio voluptate repellat vitae modi natus omnis magni delectus. Laboriosam, error dolor pariatur ipsum, accusantium commodi ad sint voluptatem maxime porro necessitatibus veniam eveniet atque dicta vitae itaque iusto tempora velit. Rerum, aspernatur.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
         </div>
-      </div> 
     
 
     </div>
 </div>
 
+<!-- foter baar -->
 <!-- Bottom Fixed Navigation -->
 <div class="bottom-nav">
     <div class="container">
@@ -394,11 +670,11 @@
             </a>
             <a href="#" class="nav-item-bottom">
                 <div class="nav-link-bottom">
-                    <i class="fas fa-video mb-1"></i>
-                    <span>Video</span>
+                    <i class="fa-solid fa-users"></i>
+                    <span>Admin User</span>
                 </div>
             </a>
-            <a href="#" class="nav-item-bottom">
+            <a href="search.html" class="nav-item-bottom">
                 <div class="nav-link-bottom">
                     <i class="fas fa-search mb-1"></i>
                     <span>Search</span>
@@ -415,5 +691,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="java.js"></script>
 </body>
 </html>
