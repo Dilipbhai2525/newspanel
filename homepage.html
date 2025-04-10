@@ -1,0 +1,1156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>home</title>
+    <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Add this custom CSS after other CSS files -->
+  <style>
+    .news-container {
+      padding-top: 90px;
+      padding-bottom: 30px;
+    }
+    
+    .news-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .news-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .news-image-container {
+      position: relative;
+      padding-top: 66.67%; /* 3:2 aspect ratio */
+      overflow: hidden;
+    }
+    
+    .news-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .category-tag {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      padding: 6px 15px;
+      background: #28a745; /* Green background */
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff; /* White text */
+      z-index: 2;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    
+    .news-card:hover .category-tag {
+      transform: translateY(-3px);
+    }
+    
+    .news-content {
+      padding: 20px;
+      position: relative;
+    }
+    
+    .publisher-info {
+      border-bottom: 1px solid #eee;
+      margin-bottom: 15px;
+    }
+    
+    .publisher-image {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      margin-right: 12px;
+      border: 2px solid #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .publisher-details {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .publisher-name {
+      color: #333;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+    
+    .publisher-name:hover {
+      color: #007bff;
+    }
+    
+    .source-name {
+      color: #666;
+      font-size: 13px;
+    }
+    
+    .news-title {
+      font-size: 18px;
+      line-height: 1.4;
+      color: #333;
+      font-weight: 600;
+    }
+    
+    .news-excerpt {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    .news-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+    }
+    
+    .read-more {
+      color: #007bff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    
+    .read-more:hover {
+      text-decoration: underline;
+    }
+    
+    .read-more i {
+      font-size: 12px;
+      margin-left: 5px;
+    }
+
+    .header-nav .btn {
+        padding: 0.375rem 1rem;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .header-nav .btn i {
+        font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        .header-nav .btn span {
+            display: none;
+        }
+        
+        .header-nav .btn {
+            padding: 0.375rem 0.75rem;
+        }
+        
+        .header-nav .btn i {
+            margin: 0;
+        }
+    }
+
+    .sub-nav-container {
+        margin-top: 60px; /* Adjust based on your header height */
+    }
+
+    .sub-nav-container .navbar {
+        padding: 0.5rem 0;
+    }
+
+    .sub-nav-container .nav-link {
+        color: #333;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: color 0.3s ease;
+    }
+
+    .sub-nav-container .nav-link:hover {
+        color: #007bff;
+    }
+
+    .sub-nav-container .nav-link.active {
+        color: #007bff;
+        font-weight: 600;
+    }
+
+    .sub-nav-container .nav-link i {
+        font-size: 1rem;
+    }
+
+    /* Adjust the news container padding */
+    .news-container {
+        padding-top: 30px; /* Reduced padding since we have sub-nav now */
+    }
+
+    @media (max-width: 991.98px) {
+        .sub-nav-container .navbar-nav {
+            padding: 1rem 0;
+        }
+        
+        .sub-nav-container .nav-link {
+            padding: 0.5rem 0;
+        }
+    }
+
+    /* Language selector styles */
+    .dropdown-menu {
+        min-width: 150px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+        border: none;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+
+    .dropdown-item {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.875rem;
+    }
+
+    .dropdown-item:hover {
+        background-color: #f8f9fa;
+    }
+
+    /* Scrolling sub-nav styles */
+    .scrolling-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    .scrolling-wrapper::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    .scrolling-wrapper .navbar-nav {
+        padding: 0.5rem 0;
+    }
+
+    .scrolling-wrapper .nav-item {
+        margin: 0 0.5rem;
+    }
+
+    .scrolling-wrapper .nav-link {
+        white-space: nowrap;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+    }
+
+    .scrolling-wrapper .nav-link.active {
+        background-color: #007bff;
+        color: #fff !important;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .dropdown-toggle span {
+            display: none;
+        }
+        
+        .scrolling-wrapper .nav-item:first-child {
+            margin-left: 1rem;
+        }
+        
+        .scrolling-wrapper .nav-item:last-child {
+            margin-right: 1rem;
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        .news-card {
+            margin-bottom: 15px;
+        }
+
+        .news-image-container {
+            height: 200px;
+        }
+
+        .news-content {
+            padding: 15px;
+        }
+
+        .news-title {
+            font-size: 16px;
+        }
+
+        .news-excerpt {
+            -webkit-line-clamp: 2;
+        }
+    }
+
+    /* Loading spinner styles */
+    .spinner-border {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    /* Add these new styles */
+    .news-modal-container {
+        height: 100vh;
+        overflow-y: hidden; /* Changed from scroll to hidden */
+        scroll-snap-type: y mandatory;
+        position: relative;
+    }
+
+    /* Update article styles */
+    .news-modal-article {
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        transition: transform 0.5s ease;
+        background: #fff;
+        overflow-y: auto;
+        padding: 20px 0;
+    }
+
+    /* Smooth transition for header and footer */
+    .header, .footer {
+        transition: all 0.3s ease;
+    }
+
+    /* Hide header and footer when modal is open */
+    body.modal-open .header,
+    body.modal-open .footer {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* Navigation arrows */
+    .modal-nav-arrows {
+        position: fixed;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        z-index: 1060;
+    }
+
+    .nav-arrow {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+    }
+
+    .nav-arrow:hover {
+        background: #fff;
+        transform: scale(1.1);
+    }
+
+    .nav-arrow i {
+        font-size: 20px;
+        color: #333;
+    }
+
+    .nav-arrow.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .news-modal-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 20px;
+    }
+
+    .news-modal-category {
+        display: inline-block;
+        padding: 6px 15px;
+        background: #28a745;
+        color: #fff;
+        border-radius: 20px;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .news-modal-title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+
+    .news-modal-content {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #444;
+        margin-bottom: 20px;
+    }
+
+    .news-modal-author {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .news-modal-author img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+
+    .news-modal-author-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .news-modal-author-name {
+        font-weight: 600;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .news-modal-date {
+        font-size: 14px;
+        color: #666;
+    }
+
+    .modal-header .btn-close {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 1050;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        padding: 12px;
+    }
+
+    /* Update the news card click area */
+    .news-card {
+        cursor: pointer;
+    }
+
+    /* Add scroll indicator */
+    .scroll-indicator {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #666;
+        font-size: 24px;
+        animation: bounce 2s infinite;
+        z-index: 1060;
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0) translateX(-50%);
+        }
+        40% {
+            transform: translateY(-20px) translateX(-50%);
+        }
+        60% {
+            transform: translateY(-10px) translateX(-50%);
+        }
+    }
+
+    /* Update modal content styles */
+    .modal-content {
+        border: none;
+        border-radius: 0;
+    }
+
+    .modal-header {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1050;
+        background: transparent;
+        padding: 15px;
+    }
+
+    .btn-close {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 12px;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .news-card {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .read-more {
+        color: #007bff;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    .read-more:hover {
+        text-decoration: underline;
+    }
+
+    /* Update the news card styles for small devices */
+    @media (max-width: 767.98px) {
+        .news-card {
+            margin-bottom: 15px;
+        }
+
+        .news-card .row {
+            margin: 0;
+        }
+
+        .news-image-container {
+            height: 120px;  /* Reduced height for thumbnail */
+            padding-top: 0;
+            border-radius: 8px;
+        }
+
+        .news-content {
+            padding: 10px 15px;
+        }
+
+        .news-title {
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-excerpt {
+            font-size: 13px;
+            -webkit-line-clamp: 2;
+            margin-bottom: 8px;
+        }
+
+        .publisher-info {
+            display: none; /* Hide publisher info in card view for mobile */
+        }
+
+        /* New mobile layout styles */
+        .news-card-mobile {
+            display: flex;
+            align-items: flex-start;
+            padding: 10px;
+            background: #fff;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .news-image-wrapper {
+            width: 120px;
+            min-width: 120px;
+            margin-right: 15px;
+        }
+
+        .news-content-wrapper {
+            flex: 1;
+        }
+
+        .category-tag {
+            position: static;
+            display: inline-block;
+            margin-bottom: 8px;
+            font-size: 12px;
+            padding: 4px 10px;
+        }
+    }
+
+    /* Update modal styles */
+    .news-modal-article {
+        padding: 0;
+        background: #fff;
+    }
+
+    .news-modal-image-container {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        margin-bottom: 0;
+    }
+
+    .news-modal-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .news-modal-content-wrapper {
+        padding: 20px;
+        position: relative;
+        margin-top: -50px;
+        background: #fff;
+        border-radius: 25px 25px 0 0;
+    }
+
+    .news-modal-category {
+        display: inline-block;
+        padding: 6px 15px;
+        background: #28a745;
+        color: #fff;
+        border-radius: 20px;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .news-modal-title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        line-height: 1.3;
+    }
+
+    .news-modal-author {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .news-modal-author img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+        border: 2px solid #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .news-modal-author-info {
+        flex: 1;
+    }
+
+    .news-modal-author-name {
+        font-weight: 600;
+        color: #333;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    .news-modal-source {
+        font-size: 14px;
+        color: #666;
+        display: block;
+    }
+
+    .news-modal-date {
+        font-size: 14px;
+        color: #666;
+    }
+
+    .news-modal-content {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #444;
+        margin-bottom: 30px;
+    }
+
+    .news-source-link {
+        display: block;
+        padding: 15px 0;
+        border-top: 1px solid #eee;
+        color: #007bff;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .news-source-link:hover {
+        text-decoration: underline;
+    }
+  </style>
+
+  </head>
+  <body>
+    <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">NiceAdmin</span>
+      </a>
+      <!-- <i class="bi bi-list toggle-sidebar-btn"></i> -->
+    </div><!-- End Logo -->
+
+    <!-- start Search Bar -->
+     <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar --> 
+
+    <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+  
+          <li class="nav-item d-block d-lg-none">
+            <a class="nav-link nav-icon search-bar-toggle " href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </li><!-- End Search Icon-->
+          
+          <!-- Add Language Selector Dropdown -->
+          <li class="nav-item dropdown me-2">
+            <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                <i class="bi bi-globe"></i>
+                <span>EN</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">English</a></li>
+                <li><a class="dropdown-item" href="#">hindi</a></li>
+                <li><a class="dropdown-item" href="#">gujrati</a></li>
+                <li><a class="dropdown-item" href="#">marathi</a></li>
+            </ul>
+          </li>
+          
+          <!-- Login and Register buttons -->
+          <li class="nav-item me-2">
+            <a href="{{ URL::to('/login') }}" class="btn btn-outline-primary">
+              <i class="bi bi-box-arrow-in-right"></i>
+              <span>Login</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ URL::to('/register') }}" class="btn btn-primary">
+              <i class="bi bi-person-plus"></i>
+              <span>Register</span>
+            </a>
+          </li>
+        </ul><!-- End Profile Dropdown Items -->
+    </li><!-- End Profile Nav -->
+
+</nav><!-- End Icons Navigation -->
+
+</header>
+
+<!-- Add this code right after the header section and before the main content -->
+<div class="sub-nav-container">
+    <nav class="navbar navbar-expand-lg bg-light shadow-sm">
+        <div class="container">
+            <div class="scrolling-wrapper">
+                <ul class="navbar-nav flex-row flex-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <i class="bi bi-lightning-charge"></i> Latest News
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-globe"></i> World
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-building"></i> Business
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-cpu"></i> Technology
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-controller"></i> Sports
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-camera-reels"></i> Entertainment
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+    <!-- Add News Content Section -->
+    <main class="news-container">
+        <div class="container">
+            <div class="row" id="newsContainer">
+                <!-- News cards will be dynamically loaded here -->
+            </div>
+            <!-- Loading spinner -->
+            <div class="text-center py-4" id="loadingSpinner" style="display: none;">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+     <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Add this script before closing body tag -->
+  <script>
+    // Initial news data
+    const newsItems = [
+        {
+            image: 'https://static.toiimg.com/thumb/msid-117527189,imgsize-1327214,width-400,resizemode-4/117527189.jpg',
+            category: 'Politics',
+            title: 'Reimagine the power of policy',
+            excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation...',
+            author: {
+                name: 'John Doe',
+                image: 'assets/img/profile-img.jpg',
+                source: 'The Daily News',
+                url: 'https://sonors.com/author/johndoe'
+            },
+            date: 'March 15, 2024'
+        },
+        {
+            image: 'assets/img/news-2.jpg',
+            category: 'Technology',
+            title: 'The Future of AI in Healthcare',
+            excerpt: 'Artificial intelligence is revolutionizing healthcare delivery and patient care. New developments in machine learning are enabling more accurate diagnoses and personalized treatment plans...',
+            author: {
+                name: 'Jane Smith',
+                image: 'assets/img/profile-img.jpg',
+                source: 'Tech Daily',
+                url: 'https://sonors.com/author/janesmith'
+            },
+            date: 'March 14, 2024'
+        },
+        {
+            image: 'https://resize.indiatvnews.com/en/centered/newbucket/1200_675/2023/10/breaking-news-template-5-1697245577.jpg',
+            category: 'Business',
+            title: 'Global Markets See Record Growth',
+            excerpt: 'International markets have shown unprecedented growth this quarter, with emerging economies leading the charge. Investors are optimistic about continued expansion...',
+            author: {
+                name: 'Mike Johnson',
+                image: 'assets/img/profile-img.jpg',
+                source: 'Business Weekly',
+                url: 'https://sonors.com/author/mikejohnson'
+            },
+            date: 'March 13, 2024'
+        },
+        {
+            image: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUSExMWFhUXGB0bGBgYGBcfHRceHR0YGxcYGhoaHiggGholHR0YITEhJSkrLi4uGB8zODMtNygtLisBCgoKDg0OGxAQGi8lICUtLS0tLS0yLS0vLS0tLS0tLS0tLS0tLS0tLS0tLTAtLS0tLS0tLS0tLS0tLS0tLS0tMv/AABEIAKgBLAMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAFBgMEAAECBwj/xABMEAABAwIEAwUDCAUKBQMFAAABAgMRAAQFEiExBkFREyJhcYEykaEHFCNCcrHB0VKCkuHwFRYzQ1Rjk6Kj8SRTYmTCRHOyFzSDpNL/xAAaAQADAQEBAQAAAAAAAAAAAAABAgMEAAUG/8QANxEAAQMCBAMFBgUEAwAAAAAAAQACEQMhBBIxQQUTUSJhkbHRMkJScYGhFBXB4fAjM6LxJHKS/9oADAMBAAIRAxEAPwDzxStNqkSmE7VatsLkjtVhodDqr9n6v60UXTibSUllCQoDdThEnyyxFQJOy9MuAS6VCK5ETrR+zxu3BCVtNKTOoyxpznY+s1DjzjBhxhlAQZzpKlSk8spzERHUGuuhzEE0mtJipF2YcH0ZhX6Co9wWND+sE1WSgpJSpJCgYIIgj0oghEOlWK2ojrUvcgaVp5kRPwqgEiVJ1QZoULgjY1BcKEb1LlB8KrXqe7RKIcoHLgnnAqMCaOWmHIAAOs70UssHZKhppUea0J+U4pXYYUdACT4CrarN9sdp2a0RqFQRHQzXp2F2zbZhCEp8h+NFLlsLSUqAIO4oc7oFxpRYlec8P8UqBQh+VNg66EkeIoj8pKVJS2nduSU+ZH5Us4pZBp9SRsFfx600/KVd522oTCJ0PpTGLFRAhyRUbVZa5eVQ2jeYpTITmIEqMATpJPIeNet4d8mtqWwS8tZUkFK0lITqNxvmHrTAE6KpqNZqvNre7LSgoetEE8RHofhTZhXCDTLzjd2guNqyFpaUr2BUVghI0JGUFJ66bUNf4OCIztOCepV5daQiNUxe1+n+0HHEZ6H3JrP5y+B9w/Oif800c0ufEfeKhc4ZRyC/fP4UuZqGUqqjibwPu/fRhjEoPeSCPDQ/Ghh4cbAKsyu6JIkTpy2onYoCpOWT46j3c6BI2RDTumK0S2tIWkAg7VaQ5GkAeQpVw7ElNogAGTOtMVmsqbUtaYCeWuskR5b1MhOCrnaHlVvDVQoydxVF1zKpCBBKp1Om0fHWtt3RDmXTRMzPUnl6UFy5vlxftkbdgv0laaGca3f0WSPaUmPQyZ91SXFxN6meTBHnKxpVHid6W0j+8RJ660w1SlV8Xc7+vIJ/DnUDc/OyFayju9YJSfvmocQuAHcsHdI98c6vLbBvVRyb085TFOLJXXCDPR2iuuY/eau4yiVMzElQHpmTQ0uy4euf8daK4qO+yP8ArH3p2q9TZQZusxAnQbkEjX0g1Hh3tpmPSt4ykSkwTv8AurMKb78BJG5156ViJutjfZUvEbUNTp7X4KojhZhpG/sj7hQzH3PogIjX/wAVUSw5wBtIPIAekCKvsorzjB8ThRBTKVDXw8dt/GiQyphJUkJ3CYIOuxPWq2BsIG4mSJ/L+OlN1naMZlZ20qKt82oMbR0rnVIXCnKX7LBhcKCUEK11PT0om9w2bZMlOdtR57p6SOnjTlhrbSIS0hCABJCYGp2n41Zv30AQ4tCQf0iNffSF5KoKYASjhWQmIAipsbwxp+ASlCwIQqdesK6p5eHLxqXNrBUWyCNwJ3/dUhwkqPaE/VHKIPPz1qIF5lNOyVewIWpCxCkmCOhFRPGDFGseans3eZGRR6lIGU/s6fqUFvRpWqnVkKD2dpV3iJrLtCe6J0O8VAuuHztVcyGW4RMXAAEzsORovht2gjQ6ig7TSVpGmtTWFmEupI5HbwrOQIutQLpTcxjLKBK1x6H8qKWeMNu6IzT4j99VMVwdlzKteh0HgfA1etLcIA7o8xQEQlcCTKXuIMIDlwgSEgpKlq8iOvPYetCOORGQQcusGSQdvz+FOV04lboaP1kKnrEp09aVeP3kdky2BBQSI6DYUzCTCR2UfNJ6BpXuHyYWyE4c2UlRzlRIUdAcxByjkNK8Qb2p/wDkqcfL6m0PFLSUZlIIKkmSPZ1GVW+vnpV2G6hWbLZXsVsfupb4gxda1qabAAbPeKjBJ10EA6R1ijbKxtziPHzryzi164Kne3Qc/dCFpQAMiSSVT1UneJjwFdVBIgKWHjNJVw3RWuXFZUgaRCges6gUx8K36XlEJSkBI5FJG/8A0nSvLsTxRHZIbRJVMqzHw126kn3UZ4B4nat1lDiSA4QM8iE9Mw6a7isppdmVvNS8SmK4soDyjBlK9I2n8a6wCzSAqQCcyd+fhXeLEKbBCtCZEfW0JjxEa+lSYc4ROhgkd4cjPP3VItJBRi6D2NoChJjkfxqW/wAfabS4ytRzqUIASo6AI3gabVE5buKtkdioJVpJPSdYMUMxLDHCtOhWVQCqDvIBJjw10q2WQlCZrwguskHdKiD+zBrht4B9cmO4n71VyQA4wkHRKFDX9Qa1x/6hcDTKj/y8KSESVC68DeTJjseX29qh4icBQ2SI+lRyO066xUwT/wAWdz9CNvtHpQvjS/7JLaRqoqz68gnqPEn4GnAuEh0VHF7pKbn2FHVJkCSNvGiqjmu3CJAyJO0fo786T7e8UtRW4qSIIBG8ECD6H4Gm2yczvuLT9ZtB9CBVfZuVN1xAQppPfH2h99EsT/pWdD7XPzTQ5BPaDzmfMgD7jRXFP6ZgAzr+NNUMwpMELeIiY09x/OKzDjKgYmtYuuASOQ9N4qLhkykTyzffpWIt7U961tPZhS8TgBsQI16HoavN2uZKTI2HL91DuJQciZPM7x4dKLoRoO8RoPurSdFEG685wh7PEUTt3XUrylPqdvcNTSuzmaXBkH+OlN+C34Pta+dBwhFrgbKY4eYLi1BKxsEAjaImY8d6NNsJuECTDiRGh/zazVVT6VNKToFEGD0qHB0updBC2kiNdyT79CaSCqSBZS4xZLYS2oqWqTlJUZI0B36aH31IrFIbggr8OvnU/Gb2a1KUqzrGUiImcw5eU0gtYutB7w15zIrgzNdBzwEZvhLJMFP0iYEnSEubCTG4oPcrMQav4vek5G8sFIlY6LVuD4gBIPQ5qFuPFQiKZjTKBcIUbu1VnDRewwN95QQlpYn6ywUpA6yR91NNnwC0nV91aj0bgDykgk/CrAQpuqNCR7e6yGDtUtveOZ8yIidjzp/Vw5aZVJDMJP1lFRV6Enu0lYpg67ZekqbOx/A+NAAFAVhKOM3l68mIbygRl1g+c1u34jWlsoOiwog84ig1nieRJSlJlXPWtYdalx1KR3iToOvn4US0bp8/RNfCYW9doJB76VkE9Exr5SQPfVL5UbYJLaohRJB9KfuE+F1MLLzrmdxScuUCEoToYE6kkx02q1xXhFq8kfOGgoT7QHeSOZBGtcGFRdUaDIXhOHWa3VpbbSVLVolI56eOle58L4GmzYShPtkAuHqqBMeHQVesuGbZpXastISoiJiDEDTw0Aq44kjcVZrIUqlXNZAeJr3sG+2C1ZwMqEfVUVc1fZAJH76FPcThTSVpR2iyUy1nPd5KMFB050W4nwsPs9mHEtqkK7xgGJ0PPnSCylLDymnd0mMyToNDqNNTMaf7i1Om0jvUXPIIUmOY9mtnJtG05lFoEqSSklJVmEIGqdIM7+VAOFbFDzpQsAgNOK1JGqUKKSOpCoMeFGr5DTgGdA1WCSDlJ3mSPM70w4PwIWH3HEKC2lNqSlJjNC4BCjsREjxmpVaTmC60UqrCbWVdZz2rPLLkPuhMfGjNk+EMuEkCSAJ2mQddNKxFkEMqt1dm04TKMxGqQBoCJjWa7PDj6my32raMxBnfkORTrrWUUitHOahVguWm0p1MJkDlqN4/jWrjKpHd8Y8PCo7bhQW2Z95wuhAzwAQO6CQSJJJ3oTh/EFspwrzpRnkwTASBHdgxEzI+zWo06YbG6i2oSVYxC5LSkqyhR725II9mfZI8K7ZxdsqK1MkEgDuuHlsdQaXcUxAqWvKQtGaUEkwAd49Z9wqgq/cA2SB76yFq05oTk3iFuXis9qmUhOyDzmlHj1zPcBSVFSMgyyIiCcwjz1nxoY3fqBmZMzRG3vC6UoWJmddBBA12FFoy3Uy6bJfaVrNOmEYdcsqV9CHkQnvtqBIB7wISYUrfWByqiLJrOkQoyJPfUOZG3TSjxxJKTlAMRMgadAB602edFxbAup2eGVnvhLmsaFPwgGRueVQYkyoPMEpUI37pHXqNas22NEkBC1g8+8Rl6evhUzWIOdpOeSNBIBgTPMeNCCdVwDQLKreWiVjLmAkEGVQfjtWYfZlCgBqCDrpvM/iaY0Y07zyK80/ka5dvm1KSV27Z18NZHTLUzRvMpw9K3FA7qeep/CiPZTGk6dat4rasulGVvIBOaOfsxGvgaItMWsCVOzz1cqmWySV4JiC3QoJdEKHgBI6iNCPEaGrdhckc4omlwKGVRSU/oqEjzHMHxBBrHcJtiJQ4tKughSfQK7w/aNK+swWlK1rlzb3ubukx5Gi+F22pUVo03zpKz7iYpcdw0p1z/D99EsPt2tCrtFRyEJB85mfhSGtTiZTw7ojGN36AUtj6QmDKEACeQgc/LWqFzeNogRLs7GCG+h59/mBy566V0wwQo9mAhJ6TJ81HU+W1RO4IUqzFQjoBTCHaJS6DcoxwbhTTvaOOpz8kgz6k9f8Aena2S01o22hH2UgfcKUmOIUIUkhogAAESIO2o00orbYwl8d1BT4yKq0LM9xKYiCrWqa0b1asXylEEZqpLuykk5CZJ0kU5LQlDHnRVnBQ+6TAIOytDV5+6O/Zkev7qrXV3pq2feKTM3qn5T+iV8QwAuOtItgZclKpmEkbqPQQQaeLW2w7DYUQ52gEFfZuqkjcg5cidehFBcH4natlKJZWtSo7wUIAHLUfxAo83xyg/wBQr9oflRBBEhPmiA/ROGFOpebS4jRK0hQneFCRPT99BOI8SbQezXJJ00G3WZoOeO0jZlY8lD8qA4txO24rMWlAncqMjzMUxNrKL+5OGB4yUoDehEwkqVB1khI6nejb9+OxLiYmNjrr0I868zbxNCVJWswSQBqBJJAEU44FBacUoEhZymDqBH360lJ7yYKgCUvY/jiGtE9oCVCVZFpnKqFlbi0hJJEkAKgBMaaVYwjCbV46pSoqEKU3mCc0ZsyZAAmVTprANEL/AA9TqkKU3mKV5iYSpJkKC4CiMuYGSmIJjXQResklJBUDponMZVrEqVqdYAAAJgDczWkSCnQhzhRCLlpaBmalRWlZBCIHcidVa9Z2prtzAjQeH5VB2+sfGuyuBv8AA0XEnVcICBca26ltp9mJjUd6eoVyGm1VMFv7tahmfR2aSkKkIkyYSkabnb1oFjvyl2riHGwhwkERKYkgifIb70qHjZEgpbcBBB9oQcpkfGs5s6VpaJZBXonygYgBbuMoP0hy5hMQnc67EEaR4mvNMVwkMpZV2qVKcbQspBRKAtCHEggLKphY3SJ5TTJeY6zftuFSkozRpEqQoQYiJOoVrmiI0HKmq1Ga3Jui82laEJR3u4QnTQqISJTGnIgcqdx70KTmgwVU7NC0AELREQoAwY8FCD6VXdsHQJSc48N/2Tr7qclZSII99UXbBO6TlPT+NqkO9aHOGyUEuQYV6nSaIWa0kpKQZSNf+pR/Cj1zhMx2qOupBHnr1qqvDQlCkoVBM6nlPl4ffXEISJVJCypaQIJ2HiNT6UVuCs5UOJhJTuJMDkUnfNtyFRXvDLrTKXw6lMxETOug0qNxbhUVFQKSNBqMvdgajfXWlyps4Q2xfKVwpcEgzBnbrFXbe7UFBWYqMgcunM/GiOGYGLohCEBsJ1U5BIgRKeWYmRp41ziPDpt1j6cZSRqEklI1Ekc/KmU1I/jJRrEkjTkNRoYPKZ8ahYvAlYccUFL01B68o2A510xw28Qe8FIklKgAQfj8KHX2Dutyd/8AeuXDVNj2IpylSTsknbpQZvtHBnka9VfmoUuvOOTpIgdep19NvdRWzdby6kJOsylJPmTlrlyVbZhRVqNKMKwhcZkjarV2tDRBovZYuhSI6147qrnXWvKAky4zTCtKOWjQA9KuYhZJWAYANR2tmZSOtLUdIhAC66skEHar16O7Uz9vkHpWnR3a9DDnsLLWHaQFbdGcDw9f1DsAdvhQx8EqSkbFWvkNT91enYTboDYI5jStUSFNsShTNq7EAR4k71pDSgddTJohcXgQCTJM6AUP/lhsT2jS0Tso7eVZXlx3Xp0msGyuMtjmK5xGzBT7NXO3QEhcGJ09dqjZcWsmVJyToIJ/jnUcp1lXJGkLz2/YIzyACgwrTrzqtbO03cUWqQ06oHVQSmOsGfuHwpMZaIrdSPZXj1xD7KZw1EsAjWsUqqeLXXZtnqdqo0EmAokwgN/cp7ZJiUoUCRyMEE19ANujIlKQAmNAPfXgjXD9w4wt9LZKBMmDr1I8Na9c4MxAPWbCgZIQEq6hSRlI+Fb3sDQAFmBm6P3mJJZZUuNRoB1J0H8eFDsNxBazDgCVco57yPA+FVuI7Jx5ns2hKswJ1A011k+MVQsbJFslK7x4J1gAGNTJ9obqMfCpNiSlfmtCZi5EkmAOugA6zypLVxq28+40HkIZSIzEkKc3zFJGyeWmvPzV/lA4uNw4WWFKSwAJGnfO+pEmNtPCkqKk58FbGUpElOvEl9YuAMs2oSokZVNAZyToAY0M9DJqBn5ObkNh14hoE7HKpQHiArTy99AcDv1MPodSlK1JOgVttG/IjrTFjXFDrqsw7kwBBnInnE8/GpO0ndPDm2CWcOdbZuPpAHG0qIUPqriQD4iYNP8Ab4024lEWLaEyMjiW25RruIVmA9KEnh9hyVKCwQkqUrMSSBuozPmagxRwstISgqVJ7jg0BTG0p7qiD1g+FTzzYKxojVyPYtiC2FJSUA5zCTOivXYepqyhSlAZtDzAqjw/dF5lWpS8BGadJ5Ep2M9ak7UjVRn86ISkDZTuPZU5dk6mJgSdz560JdxIpEAFXWVEyPHQe+r5enlIireA2DTi1qcbSpKRABnf06fjRKLXAaqG84gTctpSVJQUkaERsCAJoa7fJGgUJHPQj/asxZDIddUlAShBgAExpvz60pLXmUSdJMwNvLyoBpKtTqtYZypzwXins3UoUsJS4QkqGvZq+o6PAEwQd0qNOUfOypp76N9GhHJREyU9QdD7q8TdimvA+KgpIauFKBACUuj2gBIQZ/TR1+smUnlTRASVH8xxOiYbzC722UezCsv6SFaeo3HmRWlYnfgd7vDxAPMUy2eKPNpAuE9ogjuvI5g7GtvrBAW0Q6mRIEBY1nUbK9YNcpylxeJ3R3Skfqioi9eHZRHkkflTha3TTk7ab8in7QOo89vGul4cfqapOoowlzdy82xixnUn0qmi4AAAE1fvX+0VlqvY4f8ASd0c9eleE09m62uuUVwMFR7w2prThBzJUE8qr8JYWFOEq607Xr7baTqJNIZK4mEh4xoUj0qpcmE1NilyHXZT7Kfj1NcXyNK9Wi0tZdZKhkpevG1KW2EjdRKvsgEnU6CvQMGuFqQCdIH8RSraWoWsAidNvcR8QKcLUGXoTlQhQSjXcESox51abKtGmCMyrXFmXCJWUDckAE89O9I8fShqsMzFKM61xupUCSDInKADHrRm3fGyhoNqD4jfOZwhpClczHIDcT1OwrMTst7WDVGU20goBJnT1H5Gu8HwdLeb2s6oklRI02gch4VQwm9uCgLVa5ZI0zpmCQM2+4GsUx2LwJMiFD49CPClFjEovuJhKvHVu4WwWz3gvN4GAQU+o++gzbAKZpw4hblK1fooJ9dIpXsk9yPCtNCYXnYsAEIE6zBpW4hucy45JpxxM5Qo+FIHzZx5RCAVHUmOlelhGS7N0Xm1nbJ/wXjplnDfmy9VkEbbT1qt8kN/D7lupXdWM6Qf0gRJHmP/AI1548jUJq/YXi2HEPNmFoMj7iD4ESK1upyDCjMQvot1AQc0gDxrzn5UnkOW4CTKkOBR0PQpOu3P4USvscUtDbg7zLqAoAjZUGASNYB6V3Y3dosuody6oJAJ203g6xvE1hY482FsNMCjmJQrhfg2zu7BlbiSh0hUrQqCYWoCQZSdAOU0Lxf5KrhEqt1B5HTRKx6Huq94PhQCy4setpabjIlRgTykmKbMI+UtcDtGyEyAVCCmek1Kp7RVKc5Qkx/DFMqyLQtC+YWCD7jyqPspr0LiPidy7UlltP0UAqUQCJ8Op5abesheueyYMfWEGTvrqCOSdNdQaiXBXawlRHEXiUlJCMuqYEkShKVAzyMTBG9UE2MCJVlBnLJyzsVZdpjSavquA4c4KiVHUq3JJ3mYM+HSrSUySDqfv0oiEHEyqmDPFp0dDofwmj1+2M08j/BoDdtEE+FHe1LrIAHeEZepkCRHnNBxgygBIVNw5ZINMaYt7PN9eCo+JOw+4elL95hq2nG0qjvHTUHTmSPzqzxbf5WUImcxE+Ma/lQDg7RcWkGClfE3CG0j9IyfHn98UHKqvYlcheWJ0HTnzochOZQHU6/jVQhCO4TbpQguLAkidRsP4/CqYQFErUBqdAdquXCzHpUeGoUhYcOoTPxESPEb+m4oLkx8J8UKtClDqVKt17CPZ5Zm/DqBofvZLzDn7i4bW0hvstVIcQopSoGMpKgZJA5ADU+tKtswEFTiyQlQ0bVEmR7RTskR13qrYcUmydhAJbPttgkAzuRHsnbzqcyYVAyBK9RvMDQSMy19oPZWj+kT6p9ofaHrVBTnZd18the4IcWjMOSilGk7+6u7PE7i5aStgIYZVqFmFK8YA0muF8OsKMuuKdUd1FRHpHIVSeijHVeb3bSioBOh8KKW12GdFiTFW2bMJWc3TT1qljrIUpJHIV4QM6rcbFMfD2Lkd5MCZH4j8ao3+IrddJKtBypfauMgCeYpgsLVKklxSkISIlS1ACTMCTz0NXoRmU3tJ0UlsmpblUipAGOVyx/iJqW2DGfMq5Ygax2g1Nbsw6pBhqx9w+BQkPFJkU2NYi2rLE5iIIg6SAZJ2jQUKx9xp4pLbtumN/pE1xhDqEKPaPs5cpGiwSTpA8q7M2NVdmHrsdAYSPkUY7MKkTpNU1vG3C1qbWqNTlSSY2A05fnWv5QZEw+3P2hXIxVqcxfRJ6KGnhUCRMrcMPWIjKfBQL4ju20Zxhtx2Y70qAHd56bz4RRS+4nt2ENvvks5h7Cgc/ojc66dNars4uykz26DBn2UfeBXmnGGGvXV2692rSkqMIlzUJAhIiNKoOU46wpVaGKY2Qwn6FGOI/lOL6VsW7fZpVu44RJCQTlCRoJ050rP4y57JeGZB/pM6jPQJTsEjbSorrBLlyM7zaoAAJcmABAG2wqWw4XMjtFNEH/rVKfQDWtbH0miGkLzKmDxbzLqbvAq1xZjJUUBpa1IKBKsuUKVrmPU8qOfJVjTTDs3KEdmo5C5AlsnVMnmgxHgY60Ix6yzdm20G0oaRkHe1VqSpR3gnp4ULOFuBJTmTB3729bGOpBvtjxWZ2CxU/2j4I78pbzK72WMpRl0KY1J32ovg/yaOvWZeJCVzKdZEabxzpIZwxYGpTPnT9gXHT1raBgDOoEiSrkfGrc9mUZXBSOBxE3pnwUHB7bzrbloQCLVROaQJSZ7vvnX38qkw3B2UpXiF4ntQpxTdswO6HSgkFbhTqUJ9mOcazpQjhjFXmFuOIyp7V0Zu6FZQZJKeihJ99OePJQpnDXGz9Chzs1E/VJdSSVdJEma8itiHMfUcw7L18JgcxpiuOzcx8gTH1Q9WNXaYCbVppMHKlNogCBvEoJIA5101xTfKSAlCVJUdALZBCiN4ATBIo2t1zt3cz7ZStFyppGdHdJKEJlUx3gZAnSqeDnJboZzoDoYvIHaJHfLiUpAVMTEka14X46qRM/y/ovcFbDBn9hk28j3bKgeIr4GOxQDOWPmqJmJy+xvGsdKj/nRdkEdm0QFCf8AhmyAo6AHu+0dutMlrdBLakOXDbj5W52bgKQAtLKUpMfZzJnrQLhF5pLJDmue7ZEZwkjLCwsyDKQeXPrXDG1YJvaPqnbVw5puf+HbYgaa6307lwMfvYJ+bohO5+aIgRvJyaRXZx6/BANumTsPmiZMdO5rRDEHAtlqCCDcOlag+lOQLuPrInvgp91F1Yi2pxRQoKB+cqOZ1IPaDK0lCT9VKhKgfGkOPrgTfffp6qLsRQAH/HZeUsW+PXi3OyDLAXzCrdpOURJUqUjKkDUk8qIpxZYTm7VjKNM4sD2IPTtQJjxy0GtAB88CgQYazALzqDXaJ7YBY9rTJJ6U84fiNq8z9CQp2F6SQUQqG05CYDJTpliCPGvWouLmy5yGO5VMjJREW0A6A6kHrb9Uqu2zbzilraS1dIT2hDRlq4b0OdsToY6b++FnF7tFy6koBCQn2TyMCZPPbl1psbZ7NbRIKENKu1DNoUsTDYM8sxXHrSwxhKuxDqgAkDuqMErBP1onKkaRv7St9KqHhsFx7l5mJpNzf0xqJ+Rkj7xKqqwtRSVRMCY2PuPLyoaGADsKZFHIvKFDoqNRO/TUeh89ahxW3hICUpKlQoEDkdhMCDObQ1pFxZeeZBgpcWkiq7jh2nSr7neExVJ9uuXKziHEBWn2Ak6CQTA0AMA8z4zS+ZOp1q46wSlShEJieup5VxaMJURnK0hWiSEEgnpP5A1wACYknVF+FeJ3LX6IwWlKnWe4eo6CvSXrlKiFBWhE6CvLW2GEkyhawNDqoQdhJERr91XEYplASA5A20B+NGUuWUafuStWm8xU2FW5Us5taD2iFKdOpipMSxn5uCsDvHRKep6nwFeG2mSQ1q2PcAJKMYthqQ50EVXx54JtGW0qCgtxa5SQRCO4NvEr91ecX1+48orcWpRPU6DyGwpzxlvs+xY27FhtJ+0R2i/8yz7q3nD8llzcqnDH83EC1hdX8C4UvLpBdYZzoCimcyE6iCR3lCdxVnE+Er22bLrzBS2IlQUhUSYEhKiQJ0mmPFg4zgltbMpcK3VJW4WwoqSDLpnLqNcifSuOILs22CsWqlKLrygpYUSVAZi4qZ107ifWi7Dsy31hejS4tiOYMmXKXQBvHXVBMK4UvLhsOss50EkA50CYMHRSgdwR6VHi/Dl1apC32ShKjlCsyCJgmO6TB0O9MPHN4baxsbFtakrjMvIopJKU6jQzqtZPpUvHzivm+H4cFFSzlK1EkmQA2CTzlS1H9WkOGYAReQFop8bxTqjXdnI5xtF4G+qB2XBt862h1u3zIWkKSc7YkHUGCqRND8Xwp61WG30ZFlOYDMk6SRPdJ5g+6nH5SC+py3YtkvhpprUtZwCTCUglO8JT/mpU4aw351dNoWpS0nValKJPZp1Ik8jIH61JUosacgBn7LTg+KYirTOIqObkEkge13bqRzhm7Sx86UyQzkC8xUj2TEHLmzcxpE1WwzC3LlfZMozrylUSBoIkyogcx76fMe4hFxh2IrBHZh0NNR+gkspJ9VFZ8iKH/J46m3Zu7w6lDeVIjUkArIHUk9mKd2GaHtaFmp8bruwtWq8CQQB9eqUbDB3n3VW7TeZxJUFAFOmUwqVE5YnSZreH8NvvOPNNozqZ/pIW3CdxGYqg6gjSdjTP85OFWHZpM4hdiVK0lsHc/qyY6qUTsK54cX8zwa8e2ceJQk89YaSfGFKWaIw7AYPzU38XxDmGo0CJDRbU7n5JUwXAH7sLUwgrSgAqMoETJG5E7Hau7Thp98FVuA4EpzK1SnKnqSojx9xr0T5L1N21k0F6KunlAeQSqPTK2o/rUsYBcG2wK6cJ+kfPYp6x/R6eUun0qgw7bFQqcXqlz2iLEAfqlnAsAubyfmzKnAmMypSAJ2EqIE+A1qfHOD721bLzzBS2CAVBTZAkgCQlRIkkCfGme9uvmXD7baFFDtysElJgwo5zr/7aUpoFifGXaYaLBKDqoFbhczEwvtIykSNcvPlVGta0QVI4zEVXywDLmj90LwFrMSkCSVAAeOwow8q8w9fZPtocZfmWSoEKggSCPZWJH8bb+Ta07S5T0Qc5/VGn+aKc+KbEP3mHxqkLdKvJGVRH7SY9a8OvjzQxZZFoJP0BP6K2JrNzNYdAJ+uyV8Swdhp1ppbNwhbx7iErZVzA33iTuav/AMyx/wAq4/bYq43/AMTjijum1bjwzR98rP7NAON1X/zl94fOW2EkJSUqWlEABObQgaqkz4ipsxdSo9rAGg5Q4yDqdAL9ErMVinFrBVItuVYVw6yEOuFFxlZKgs5mNMglXnFQ4Jg7F0FKZRdKCSASSyNTrGu9X2HijAHFEkqcKwSSSSVu5NTuSaaOFLJNpapZP9IG+1c8Cqd/cU/qUlbiDmMcQ0E5so+QiTqldjsU0EGqZBjb0SDhVha3DhaaFypYBJH0QAAMGSdN9KtWXD7Tq3G227pRaVkWQWMoUN05joSOgmpuDFfMcMexBY+kd0bnnqQj3rJJ8BRFNvcM4IhLAcU+8AoqQDnBdVnWrTUHLpNVrYwh5axrYzBgJnXVx10CD8fiptVPTbXwQ/E+G2rZsuui5SgQCQWzEkAA5RsTA6VDw5i9q06EtLdPaGDnSnTKCZGXUetUeIeJnjZIsHGHULARncdUSpYScxMKE6qA1k7UnpUd9ulb8GXFs1mjXbcddTqnJxVekWvqG/yjyXr+I4am5S4lClNhSgVKGhVEEDWZGuw8epquMJcYS20XsqFKKUlKUkgEQEuBW6QRMjwHjSUi5Uy20QTmTBB6E94x6j41ZXjbt5r3UNT7O5kfpq3UZ8I26Vtq5HDSBsvJh7HayheIMLZuiHXyoKJMyFE665swgGNyKM3VsAMwVIGhE7A8hz8eu9A+KmAlwLkqC4BJ1yqHLyPTzqXArpIJTmUT+iBoZ3MHp4VamZaFGoIciC8MzZU7RmH1I0jmDM+nOgV01lJGhj4++mH+UihCUlQkGIG4B1k9Z8Y39KEYg6FkmBJ+7l+NMUoQt5wFKh9ZQ/j+DVf5wCCBAncJgJnkpI2B8OdRXTRJkkAZoInvecdK7bbTyA9aVUJlXrW93BOTOIKh7Ko174Oxmpu6dSZJ6Kge7lQctwDuPI6eoI1qNLihsr4n8K6EZT7htjllc78qR+L3JfKZ9kfE7/hTLY4osyI1pZ4stih4K3zpk+YJBHuj31gwQirfWF2IPYVPhyw7e6YZOy3Eg/ZkZv8ALNOLLRvb4JH9e/HklStfcn7qDcEsZHHnz/UsLKT0UuGkesrJ9KJ8PYwq0uEXCEIWtE5QuY1BTOhBmCa2Yqz2grdwmm7k1HsFzYJ/42xB5OJtWNo6WxDaVZQk95aucg7IKT61JxXhqH8btrVCR3UpLh5kSpwg+GVI/aoR/wDU65K+0FpZhz/mZFZpiJnNO2m9CsH4ouGbtd8Qh19wEErBgTl2CSIgAJHhU31maTurYfhuJjM2nBa07i5K9Owu8S9id1Z5U5GUJKTHeKu72ms7AqA25Gkzg2zdvMVm4VmU1nKoEBPZkoSkAbDMoH30GwTiJ+2uV3iAhTrhWVBWbL9IoKVsZ0IEa1ZwTi5+1fuLhtpkruFZlBWeEd5SiEwqYJPPoKQ4hjok7rQ3g+Ioh+RkksABtYmM36rjHuIn1XNwlp9SWg4pCEjLGVPdkaTrBPrTNwtgzTGHKeeuEWy7kFDTjn1UwcpAkST3leWXpQHFeNHn2Vsm1tEBYgqQghQHODOhI0nxqlxDjz14Wu1Q2hDKSltDebKJjU5idYAHpS81gcXF09ArDh+IqUm0BS5YtmdIMx+6aMWwRq3wNfZPpfSXUw4jRJ+lQCBqdssb8qy6ZFphdmfrvvtrP2c3an/IlKfWlW4x95ViMPyNhkKzZu9nnOpzrG56cqnx/HXr3sg6ltCWUqShLeaO9lEnMTqAkCn57NR0UBwrFO/pPFi8km3SyJ/K7hwZu2nBstmPVClT8FCpflFsvm9rYWSZLioUodSkAa+a1n3UH4m4pfunLdTzbX0BlOXP35KCUrk7HINutRYjxO9dXjV28lsKaCciBmySlRUJ1nUnryFA1WS4g6wmZgsUGUmOZ7GY7a7Jwxe2QxiOF2KSYbTKvNSVNp+5fvof8omEhv5hhrZkrXmMdSrIk/tLWfSla/4jfXf/AD9YR2qVJISJyDIAAkazB1O/M1mKcV3D96i/UG0uthIQkAlAyknYmdSTOvOqc9pkLIOF12uY6LwSf+103catlOKWFmxBLeU66pHaHJt1ShJV60E+VxaRfIYTs02CftLM/wDxCffV63+Uy4cdCja2aXSIDpQsqGnXNPxpFxW6cduHXXlZnFqlSuvIQOQAgAdAKd1QRZLhMFVbUa57Yyg76lPnyYgNMXd2rZAgfqpzq/8AGmTgl0KsWLhw95CXST5rUVn/ACikPDcSeNiqyS2lKFEy5JzGVBR022hPlVP+drrNouwS2jKQtOeTmhZJVptsSPWvnMTw+riHvjUuH/kCP1NlSvQcQXkam3yTbwE/ktr3EXN1qWvXokFUftKj0pHvuJby4b7J64K0GCU5WxMGRqlIO8USwb5QnLZhFum2aUlM6lSu9JJJIiNzXOJ8WpvsjT7aLdCTmzN6yYIAVI0Gpq9HCVW4h7n0xc2MiwAgJqbg2qS5sjbuhP2A4YHcPskK9gKS6vxCcy0/5snpNU+HrtV7/KTyD/SfQsnolKFhB8pVn/WNULvHHUWZt09mlsNBAcBM5YCcw5TH30rYBxycPbW00ylxJXmBUognQDlsNPjWX8txJZUMDMXdkTtmzHxgeCx1CO049Ub4+XnetcLt/ZaCBHLOoBKJ+ymSft1NZLxG1vLWwN2Ck5TlSlCsrYJkFSkZh3UqA1pLwXF3l3nzqU9pnLhKgSJM92OkaeQr0FXHFwe8lm2zRAJKwfjE+U1pq4OuxjaTWBwgzMe0d7rjXYGhov6oN8rV7nu0ND+qa181mY9wT76R5ga7CiGIOrdecceVLi1SrQD3DkAAAKgVba6QQNdc0eWg38K9HCYQ0aLKfQf7WhmLpU6WUG8Iq2sPJSf3eVUTnt3Z/qlGTpIMiCB0PPxgVFauqS5vIJnwGon7/wCJpqDzHZwUhcjXNMH7KRy8SRWoiDB0Xml8pbxniELR2SGxEjUzOmoyjkatYbiDKNYlQTCdFDLsQepqVWEMghSUg7RmG330Ks70nMFAkgkQOUcvKqMAaOykccxuiT7ucFWZJlXJMeWYGNfGqS9IBPpPw1rsvTt8KrrWR1pplCIWlspOpHrJqpcAJMp9n7qluHAACY12jlVV1WYeHrXLgrDaAarPYZJkEium1ZQAevPpVlL3XWgiVabejUVWu7RDi865KvM+4DlXY6V2KwNlhltl9h+GoOEFg8FdwhVu2060sOjtVIkoynRGYhPeP6Rn0Fd9lZf9z/pfnQ+sTRc8uubpmYamyzLDoEUSmz/7n/S/OuwuzH9p/wBL86FCt0lui0NDho4ot21p/wBx7mvzrXa2v9//AKf50JFdUuVvRVD3/GUTLtv/AH3+n+dc9ux/fe5FUK0RQyjonzv+Ioglxjq6PRFWG1W//NWP1J+6g4NboFgKOZx95GXG7VW9wr/CVUXzW0/tKv8ACXQytUvL7z9kkPPvn7eiJmytf7Sf8Jdcmxtv7Sf8JdDq3NdkPxFdkcdXH/H0V7+T7bcXJ/wnK5Vh1sTPzn/ScqpNZRh3xFLyAfe+zfRGWnkJTlTdCPFlZoa5hbCiSbvf+5c/OoK3TNLm3DvL0U34Jj9XH7ei2rBWP7X/AKLn51hwViI+dj/Bc/OuayaOZ/xeXopHh1Pqft6K69aNqaQz88hKR/yXNdZ66Chy+HWCZ+ej/Ac//qu81apg+p8Xl6KLuEUHak/b0Vmzw23bEfOp/wDwuCrjbTA2uv8ARcj3c6F1lDM8+95eiT8lw/U/z6K09hzCllRvN/7lz8621YMpEJvIHTsnI93WqdaJpuZU+Ly9Ep4Lhup8f2Vx6wYUoFV3MHQdk71k1I1aMA//AHWnTsXPdvQ8CsJri+odXeXogODYcbnx/ZHWnLcHW4kcwG1ifgaq31paKXnbuC2Igjslqk9ZhMfGhdc0A540d5eiB4Ph+p8f2RJFlbj/ANXr/wCw5+ddi2tpk3IPgWXI++hdaNHPU+I/b0QPCKHU/wA+itYnhVo4QUXPZjp2Tp90mQKy2wu1Tqq5zqA0JZcgenXxqmaym5lT4vL0S/lFDv8A59EQuLK3WkpVdDeQQy5I8OkVT/kZj+3f/rufnUVcknlXZ6h97y9Ev5TQHVbIrAaysoL0xquqwisrKCdbBrqsrKBTDRZWgaysrky6BrqsrKCYLRFZWVlcitg1lbrK5MFlZWVlciFqsisrKCKysisrKC5ZFbrKyiuWVlZWUUCtVomt1lclK1WVusrkFomtVlZXJSua3WVlFBaJrkmsrK4JHLAKw1lZRSlcqrBWVlFIv//Z',
+            category: 'Sports',
+            title: 'Championship Finals Set New Records',
+            excerpt: 'The latest championship series has broken multiple viewing records as millions tune in to watch the historic matchup. Athletes from both teams have shown exceptional performance...',
+            author: {
+                name: 'Sarah Wilson',
+                image: 'assets/img/profile-img.jpg',
+                source: 'Sports Network',
+                url: 'https://sonors.com/author/sarahwilson'
+            },
+            date: 'March 12, 2024'
+        },
+        {
+            image: 'https://indiawest.com/wp-content/uploads/2025/01/India-Open-To-Legitimate-Return-Of-Illegals-Says-Jaishankar-645x390.webp',
+            category: 'Entertainment',
+            title: 'New Streaming Series Takes World by Storm',
+            excerpt: 'The latest streaming sensation has captured audiences worldwide, breaking viewing records in multiple countries. Critics praise the innovative storytelling and production value...',
+            author: {
+                name: 'David Lee',
+                image: 'assets/img/profile-img.jpg',
+                source: 'Entertainment Today',
+                url: 'https://sonors.com/author/davidlee'
+            },
+            date: 'March 11, 2024'
+        },
+        {
+            image: 'https://img.freepik.com/free-vector/hand-drawn-news-studio-background_23-2149928929.jpg?semt=ais_hybrid',
+            category: 'World',
+            title: 'Climate Summit Reaches Historic Agreement',
+            excerpt: 'World leaders have reached a groundbreaking agreement on climate action at the latest international summit. The new accord sets ambitious targets for reducing global emissions...',
+            author: {
+                name: 'Emma Brown',
+                image: 'assets/img/profile-img.jpg',
+                source: 'Global Report',
+                url: 'https://sonors.com/author/emmabrown'
+            },
+            date: 'March 10, 2024'
+        }
+    ];
+
+    let page = 1;
+    const itemsPerPage = 6;
+    let loading = false;
+
+    // Function to create news card HTML
+    function createNewsCard(item) {
+        if (window.innerWidth < 768) {
+            return `
+                <div class="col-12">
+                    <div class="news-card-mobile" onclick="openNewsModal(${newsItems.indexOf(item)}); event.preventDefault();">
+                        <div class="news-image-wrapper">
+                            <div class="news-image-container">
+                                <img src="${item.image}" class="news-image" alt="News Image">
+                            </div>
+                        </div>
+                        <div class="news-content-wrapper">
+                            <span class="category-tag">${item.category}</span>
+                            <h5 class="news-title">${item.title}</h5>
+                            <p class="news-excerpt">${item.excerpt}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        } else {
+            return `
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="news-card" onclick="openNewsModal(${newsItems.indexOf(item)}); event.preventDefault();">
+                        <div class="news-image-container">
+                            <img src="${item.image}" class="news-image" alt="News Image">
+                            <div class="category-tag">${item.category}</div>
+                        </div>
+                        <div class="news-content">
+                            <div class="publisher-info">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="${item.author.image}" class="publisher-image" alt="Publisher">
+                                    <div class="publisher-details">
+                                        <span class="publisher-name">${item.author.name}</span>
+                                        <span class="source-name">${item.author.source}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="news-title mb-3">${item.title}</h5>
+                            <p class="news-excerpt">${item.excerpt}</p>
+                            <div class="news-meta">
+                                <span class="publish-date">${item.date}</span>
+                                <span class="read-more">Read More <i class="bi bi-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    }
+
+    // Function to load news items
+    function loadNews() {
+        if (loading) return;
+        loading = true;
+        
+        const spinner = document.getElementById('loadingSpinner');
+        spinner.style.display = 'block';
+
+        // Simulate API call with setTimeout
+        setTimeout(() => {
+            const container = document.getElementById('newsContainer');
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            
+            // Add news items to the container
+            newsItems.slice(start, end).forEach(item => {
+                container.insertAdjacentHTML('beforeend', createNewsCard(item));
+            });
+
+            page++;
+            loading = false;
+            spinner.style.display = 'none';
+        }, 1000);
+    }
+
+    // Infinite scroll handler
+    function handleScroll() {
+        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+        
+        if (scrollTop + clientHeight >= scrollHeight - 100 && !loading) {
+            loadNews();
+        }
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+        loadNews(); // Load initial news
+        window.addEventListener('scroll', handleScroll);
+    });
+
+    // Add smooth scroll behavior
+    document.addEventListener('scroll', () => {
+        if (window.innerWidth < 768) {
+            document.documentElement.style.scrollBehavior = 'smooth';
+        }
+    });
+
+    // Add these new functions
+    function createModalArticle(item) {
+        return `
+            <article class="news-modal-article">
+                <div class="news-modal-image-container">
+                    <img src="${item.image}" class="news-modal-image" alt="News Image">
+                </div>
+                <div class="news-modal-content-wrapper">
+                    <span class="news-modal-category">${item.category}</span>
+                    <h1 class="news-modal-title">${item.title}</h1>
+                    <div class="news-modal-author">
+                        <img src="${item.author.image}" alt="${item.author.name}">
+                        <div class="news-modal-author-info">
+                            <a href="${item.author.url}" class="news-modal-author-name">${item.author.name}</a>
+                            <span class="news-modal-source">${item.author.source}</span>
+                            <span class="news-modal-date">${item.date}</span>
+                        </div>
+                    </div>
+                    <div class="news-modal-content">
+                        ${item.excerpt}
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    <a href="${item.author.url}" class="news-source-link" target="_blank">
+                        Read original article at ${item.author.source} <i class="bi bi-box-arrow-up-right"></i>
+                    </a>
+                </div>
+            </article>
+        `;
+    }
+
+    function openNewsModal(index) {
+        const modal = document.getElementById('newsModal');
+        const container = modal.querySelector('.news-modal-container');
+        container.innerHTML = '';
+
+        // Load current article and next few articles
+        for (let i = index; i < Math.min(index + 5, newsItems.length); i++) {
+            container.insertAdjacentHTML('beforeend', createModalArticle(newsItems[i]));
+        }
+
+        const bsModal = new bootstrap.Modal(modal);
+        bsModal.show();
+    }
+
+    // Initialize modal swipe handling
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('newsModal');
+        const scrollIndicator = modal.querySelector('.scroll-indicator');
+
+        modal.addEventListener('shown.bs.modal', () => {
+            const container = modal.querySelector('.news-modal-container');
+            
+            // Hide scroll indicator when user starts scrolling
+            container.addEventListener('scroll', () => {
+                scrollIndicator.style.opacity = '0';
+                setTimeout(() => {
+                    scrollIndicator.style.display = 'none';
+                }, 300);
+            }, { once: true });
+
+            // Add smooth scrolling behavior
+            container.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const articles = container.querySelectorAll('.news-modal-article');
+                const currentArticle = document.elementFromPoint(0, window.innerHeight / 2).closest('.news-modal-article');
+                const currentIndex = Array.from(articles).indexOf(currentArticle);
+                
+                if (e.deltaY > 0 && currentIndex < articles.length - 1) {
+                    articles[currentIndex + 1].scrollIntoView({ behavior: 'smooth' });
+                } else if (e.deltaY < 0 && currentIndex > 0) {
+                    articles[currentIndex - 1].scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+  </script>
+  </body>
+</html>
+
+<!-- Add this modal markup before the closing body tag -->
+<div class="modal fade" id="newsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+                <div class="news-modal-container">
+                    <!-- News articles will be loaded here -->
+                </div>
+                <div class="modal-nav-arrows">
+                    <div class="nav-arrow up disabled" onclick="navigateNews('prev')">
+                        <i class="bi bi-chevron-up"></i>
+                    </div>
+                    <div class="nav-arrow down" onclick="navigateNews('next')">
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
